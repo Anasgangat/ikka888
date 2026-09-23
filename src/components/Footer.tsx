@@ -1,3 +1,5 @@
+import { brandName } from '../data/site'
+
 type FooterProps = {
   onGoHome: () => void
   onGoCourses: () => void
@@ -13,10 +15,10 @@ function Footer({ onGoHome, onGoCourses, onGoAbout, onGoFaq, onGoLearning, onGoP
       <div className="footer-top">
         <div className="footer-brand-col">
           <div className="brand-wrap">
-            <span className="brand-mark">G</span>
-            <span className="brand-text">GameBoost Academy</span>
+            <span className="brand-mark">P</span>
+            <span className="brand-text">{brandName}</span>
           </div>
-          <p>Competitive gaming courses built around clear structure, deliberate practice, and measurable progress.</p>
+          <p>PUBG coaching built around recoil, rotations, and real match review — so you climb instead of guessing.</p>
         </div>
 
         <div className="footer-col">
@@ -29,21 +31,21 @@ function Footer({ onGoHome, onGoCourses, onGoAbout, onGoFaq, onGoLearning, onGoP
 
         <div className="footer-col">
           <span className="footer-col-title">Account</span>
-          <button type="button" className="footer-link" onClick={onGoLearning}>My Learning</button>
+          <button type="button" className="footer-link" onClick={onGoLearning}>My Courses</button>
           <button type="button" className="footer-link" onClick={onGoPayments}>Payment Center</button>
         </div>
 
         <div className="footer-col">
           <span className="footer-col-title">Training areas</span>
-          <span className="footer-text">Mechanics lab</span>
-          <span className="footer-text">Ranked room</span>
-          <span className="footer-text">Review suite</span>
+          <span className="footer-text">Gunplay lab</span>
+          <span className="footer-text">Zone rotations</span>
+          <span className="footer-text">Match analysis</span>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <span>© 2026 GameBoost Academy. All rights reserved.</span>
-        <span>Built for players who want to improve.</span>
+        <span>© 2026 {brandName}. All rights reserved.</span>
+        <span>Not affiliated with KRAFTON, Inc.</span>
       </div>
     </footer>
   )

@@ -1,6 +1,6 @@
 # Deployment Guide (beginner friendly)
 
-This guide takes the GameBoost Academy project from your computer to a **live website** on the internet, using **GitHub + Vercel**.
+This guide takes the **PUBG Mastery** project from your computer to a **live website** on the internet, using **GitHub + Vercel**.
 
 The flow we will build:
 
@@ -139,7 +139,7 @@ After fixing, commit and push again — Vercel retries automatically.
 
 ## 7. Custom domain on Vercel (later)
 
-A **domain** is your web address (e.g. `gameboostacademy.co.za`).
+A **domain** is your web address (e.g. `pubgmastery.co.za`).
 
 1. Buy a domain from a registrar (e.g. Namecheap, GoDaddy, or a local provider).
 2. In Vercel → your project → **Settings → Domains**, click **Add** and type your domain.

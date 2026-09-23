@@ -1,6 +1,10 @@
-# GameBoost Academy
+# PUBG Mastery
 
-A full-stack gaming-course store where customers browse courses, buy them with **EFT (bank transfer)**, upload proof of payment, and get course access after an admin approves the payment.
+A full-stack **PUBG coaching** store where players buy courses with **EFT (bank transfer)**, upload proof of payment, and get course access after an admin approves the payment.
+
+**Target audience:** PUBG players (PC, mobile, and console) who want to improve recoil control, rotations, zone play, and match review.
+
+> ⚠️ **Trademark notice:** "PUBG" is a trademark of KRAFTON, Inc. This is an independent coaching site and is **not affiliated with, endorsed by, or sponsored by KRAFTON.** Keep the disclaimer in the footer.
 
 - **Frontend:** React + TypeScript + Vite
 - **Backend / database:** Supabase (PostgreSQL database, Authentication, Storage, Row Level Security)
@@ -15,13 +19,28 @@ A full-stack gaming-course store where customers browse courses, buy them with *
 
 **For customers**
 
-- Browse published courses on the home page
+- Browse published PUBG courses (featured on `/`, full catalogue on `/courses`)
 - Open a course page and see the price and details
 - Create an account, log in, log out, and reset a forgotten password
 - Add courses to a cart and create an EFT order
 - Upload proof of payment for an order
 - See their account, orders, and payment status
 - Access purchased course content (including private lesson files) after approval
+
+**Pages**
+
+| Page | URL |
+|---|---|
+| Home | `/` |
+| Courses | `/courses` |
+| About | `/about` |
+| FAQ | `/faq` |
+| Course detail | `/course/:id` |
+| Training track | `/mode/:id` |
+| Account | `/account` |
+| My Courses | `/my-courses` |
+| Payment Center | `/payment` |
+| Admin dashboard | `/admin` |
 
 **For the admin**
 
@@ -119,6 +138,8 @@ ikka/
 ├── .env.example               # template for your secret-free settings
 └── README.md
 ```
+
+**Changing the wording:** all site copy (headlines, benefits, FAQs, course tracks, gallery labels) lives in `src/data/site.ts`. The brand name is the `brandName` constant at the top of that file — change it once and it updates the header, footer, and login popup.
 
 **Why this shape?** Pages and logic live in `App.tsx`; anything reused in many places (header, footer, popups) lives in `components/`. Content that never changes at runtime lives in `data/`. Shared data shapes live in `types/`. That keeps each file small and easy to reason about.
 
@@ -301,4 +322,4 @@ Always fix errors by reading the message, finding the smallest cause, and re-tes
 
 ---
 
-© 2026 GameBoost Academy. Replace placeholder branding, text, and testimonials with your own before launch.
+© 2026 PUBG Mastery. Independent site — not affiliated with KRAFTON, Inc. Replace placeholder testimonials with real feedback before launch.

@@ -144,7 +144,7 @@ function App() {
           image: product.thumbnail_url || heroImage,
           shortDescription: product.short_description || product.description,
           description: product.description,
-          outcomes: ['Structured lessons', 'Practical drills', 'Progress-focused training'],
+          outcomes: ['Recoil and aim drills', 'Rotations and zone play', 'Match review routines'],
         })),
       )
     }
@@ -573,7 +573,7 @@ function App() {
       image: product.thumbnail_url || heroImage,
       shortDescription: product.short_description || product.description,
       description: product.description,
-      outcomes: ['Structured lessons', 'Practical drills', 'Progress-focused training'],
+      outcomes: ['Recoil and aim drills', 'Rotations and zone play', 'Match review routines'],
     })))
     const wasEditing = Boolean(editingProductId)
     setProductForm({ name: '', category: 'general', price: '', description: '', thumbnailUrl: '', status: 'published' })
@@ -619,7 +619,7 @@ function App() {
       image: product.thumbnail_url || heroImage,
       shortDescription: product.short_description || product.description,
       description: product.description,
-      outcomes: ['Structured lessons', 'Practical drills', 'Progress-focused training'],
+      outcomes: ['Recoil and aim drills', 'Rotations and zone play', 'Match review routines'],
     })))
   }
 
@@ -804,11 +804,11 @@ function App() {
               <>
             <section className="hero-section">
               <div className="hero-copy">
-                <span className="eyebrow">LEVEL UP FASTER</span>
-                <h1>Train like a competitor.</h1>
+                <span className="eyebrow">PUBG COACHING</span>
+                <h1>Win more gunfights.</h1>
                 <p>
-                  Learn game sense, mechanics, and smart decision-making through premium
-                  gaming courses built for players who want to improve fast.
+                  Learn recoil control, smart rotations, and late-game positioning through
+                  PUBG courses built for players who want to climb the ranks fast.
                 </p>
 
                 <div className="hero-actions">
@@ -820,18 +820,18 @@ function App() {
                   </button>
                 </div>
 
-                <ul className="hero-stats" aria-label="Platform statistics">
+                <ul className="hero-stats" aria-label="Course highlights">
                   <li>
                     <strong>12+</strong>
                     <span>Skill tracks</span>
                   </li>
                   <li>
                     <strong>03</strong>
-                    <span>Training modes</span>
+                    <span>Training tracks</span>
                   </li>
                   <li>
                     <strong>24/7</strong>
-                    <span>Practice access</span>
+                    <span>Lifetime access</span>
                   </li>
                 </ul>
               </div>
@@ -844,7 +844,7 @@ function App() {
                 />
                 <div className="floating-badge">
                   <span className="badge-dot"></span>
-                  Progress-focused training system
+                  Built for PUBG players
                 </div>
               </div>
             </section>
@@ -857,29 +857,29 @@ function App() {
               </div>
             </div>
 
-            <section className="stats-band" aria-label="Academy highlights">
+            <section className="stats-band" aria-label="Course highlights">
               <div className="stat-block">
                 <strong>12+</strong>
                 <span>Skill tracks</span>
               </div>
               <div className="stat-block">
                 <strong>03</strong>
-                <span>Training modes</span>
+                <span>Training tracks</span>
               </div>
               <div className="stat-block">
                 <strong>24/7</strong>
-                <span>Practice access</span>
+                <span>Lifetime access</span>
               </div>
               <div className="stat-block">
                 <strong>100%</strong>
-                <span>Progress focused</span>
+                <span>PUBG focused</span>
               </div>
             </section>
 
             <section className="courses-section" id="courses">
               <div className="section-heading">
                 <span className="eyebrow">FEATURED COURSES</span>
-                <h2>Learn the systems that actually move your rank.</h2>
+                <h2>Courses that actually move your rank.</h2>
               </div>
 
               <div className="course-grid">
@@ -923,8 +923,8 @@ function App() {
               <div className="training-strip" aria-label="Training environment preview">
                 <div className="training-strip-copy">
                   <span className="eyebrow">INSIDE THE TRAINING ROOM</span>
-                  <h3>Turn every session into measurable progress.</h3>
-                  <p>Focused drills, visual breakdowns, and repeatable routines built around the way competitive players actually improve.</p>
+                  <h3>Turn every match into measurable progress.</h3>
+                  <p>Recoil drills, rotation breakdowns, and repeatable routines built around the way good PUBG players actually win.</p>
                 </div>
                 <div className="training-strip-images">
                   {trainingImages.map((image, index) => (
@@ -1026,8 +1026,8 @@ function App() {
                 <>
             <section className="modes-section" aria-label="Academy training modes">
               <div className="section-heading">
-                <span className="eyebrow">CHOOSE YOUR MODE</span>
-                <h2>Different drills. One sharper player.</h2>
+                <span className="eyebrow">CHOOSE YOUR TRACK</span>
+                <h2>Three tracks. One sharper PUBG player.</h2>
               </div>
               <div className="modes-grid">
                 {academyModes.map((mode) => (
@@ -1050,11 +1050,11 @@ function App() {
             <section className="about-section" id="about">
               <div className="about-copy">
                 <span className="eyebrow">ABOUT THE ACADEMY</span>
-                <h2>Gaming education that focuses on skill, not hype.</h2>
+                <h2>PUBG coaching that focuses on skill, not hype.</h2>
                 <p>
-                  GameBoost Academy helps players build stronger habits, better reactions,
-                  and smarter decisions through focused courses designed for competitive
-                  gaming environments.
+                  PUBG Mastery helps players build stronger aim, smarter rotations, and
+                  calmer late-game decisions through focused courses designed for real
+                  battleground play.
                 </p>
               </div>
 
@@ -1445,7 +1445,7 @@ function App() {
                 </div>
               </div>
               <div className="mode-page-image" style={{ backgroundImage: `linear-gradient(180deg, rgba(7,10,20,.05), rgba(7,10,20,.72)), url(${selectedMode.image})` }}>
-                <span>ACADEMY PROTOCOL</span>
+                <span>BATTLEGROUNDS PROTOCOL</span>
               </div>
             </div>
             <div className="mode-page-grid">
@@ -1576,7 +1576,7 @@ function App() {
               ← Back to store
             </button>
             <div className="payment-page-heading">
-              <span className="eyebrow">MY LEARNING</span>
+              <span className="eyebrow">MY COURSES</span>
               <h1>Train with purpose.</h1>
               <p>These lessons are available because your payment has been approved.</p>
             </div>
@@ -1702,8 +1702,8 @@ function App() {
               <div className="detail-panel">
                 <h2>Course overview</h2>
                 <p>
-                  This premium gaming course is designed to help players improve with a
-                  clear structure, practical exercises, and consistent progress tracking.
+                  This PUBG course gives you a clear structure, practical drills, and a
+                  simple way to track your progress match after match.
                 </p>
               </div>
             </div>

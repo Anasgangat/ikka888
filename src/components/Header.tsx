@@ -1,4 +1,5 @@
 import type { User } from '../types'
+import { brandName } from '../data/site'
 
 type HeaderProps = {
   user: User | null
@@ -39,10 +40,10 @@ function Header({
         type="button"
         className="brand-wrap brand-home"
         onClick={onGoHome}
-        aria-label="Go to GameBoost Academy home"
+        aria-label={`Go to ${brandName} home`}
       >
-        <span className="brand-mark">G</span>
-        <span className="brand-text">GameBoost Academy</span>
+        <span className="brand-mark">P</span>
+        <span className="brand-text">{brandName}</span>
       </button>
 
       <nav className="main-nav" aria-label="Main navigation">
@@ -59,7 +60,7 @@ function Header({
               My Account
             </button>
             <button type="button" className="payment-nav-button" onClick={onGoLearning}>
-              My Learning
+              My Courses
             </button>
             <button type="button" className="payment-nav-button" onClick={onGoPayments}>
               Payment Center

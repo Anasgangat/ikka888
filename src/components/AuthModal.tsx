@@ -1,4 +1,5 @@
 import type { FormEvent } from 'react'
+import { brandName } from '../data/site'
 
 export type AuthMode = 'login' | 'signup' | 'reset' | 'update-password'
 
@@ -65,7 +66,7 @@ function AuthModal({
         <button type="button" className="auth-close" onClick={onClose} aria-label="Close authentication form">
           ×
         </button>
-        <span className="eyebrow">GAMEBOOST ACADEMY</span>
+        <span className="eyebrow">{brandName.toUpperCase()}</span>
         <h2 id="auth-title">{headings[mode]}</h2>
         <p className="auth-intro">{intros[mode]}</p>
 

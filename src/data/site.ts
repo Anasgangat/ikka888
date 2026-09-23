@@ -32,13 +32,15 @@ export const faqs = [
   },
 ]
 
+// All imagery lives here. Swap any URL to change the picture instantly.
+// Use your own PUBG screenshots or licensed art for the real launch.
 export const heroImage =
-  'https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1400&q=80'
+  'https://images.unsplash.com/photo-1560253023-3ec5d502959f?auto=format&fit=crop&w=1400&q=80'
 
 export const trainingImages = [
-  'https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=1200&q=85',
-  'https://images.unsplash.com/photo-1547394765-185e1e68f34e?auto=format&fit=crop&w=1200&q=85',
-  'https://images.unsplash.com/photo-1603481546238-487240415921?auto=format&fit=crop&w=1200&q=85',
+  'https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&w=1200&q=85',
+  'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=85',
+  'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=1200&q=85',
 ]
 
 // Topics covered by the academy. Used for the scrolling marquee under the hero.
@@ -63,17 +65,17 @@ export const galleryImages = [
     caption: 'Recoil, sprays, and aim duels',
   },
   {
-    url: 'https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=1200&q=85',
+    url: 'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=1200&q=85',
     label: 'ZONE ROTATIONS',
     caption: 'Move early, arrive safe',
   },
   {
-    url: 'https://images.unsplash.com/photo-1547394765-185e1e68f34e?auto=format&fit=crop&w=1200&q=85',
+    url: 'https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=1200&q=85',
     label: 'SQUAD PLAY',
     caption: 'Callouts, trades, and roles',
   },
   {
-    url: 'https://images.unsplash.com/photo-1603481546238-487240415921?auto=format&fit=crop&w=1200&q=85',
+    url: 'https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=1200&q=85',
     label: 'MATCH ANALYSIS',
     caption: 'Turn every game into feedback',
   },
@@ -107,7 +109,7 @@ export const academyModes: AcademyMode[] = [
     detail: 'Recoil, aim, movement',
     description: 'Learn every weapon spray pattern, control recoil at range, and win the first shot in a close fight. Short repeatable drills that keep your hands calm under pressure.',
     modules: ['Spray patterns', 'Crosshair placement', 'Movement and peeks', 'Aim duel drills'],
-    image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=85',
+    image: 'https://images.unsplash.com/photo-1560253023-3ec5d502959f?auto=format&fit=crop&w=1200&q=85',
   },
   {
     id: 'ranked',
@@ -116,7 +118,7 @@ export const academyModes: AcademyMode[] = [
     detail: 'Timing, routes, cover',
     description: 'Read the zone early, pick safe routes, and hold strong late-game positions so you are never caught running in the open.',
     modules: ['Zone reading', 'Route planning', 'Compound holds', 'Late-game circles'],
-    image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1200&q=85',
+    image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=85',
   },
   {
     id: 'review',
@@ -125,7 +127,7 @@ export const academyModes: AcademyMode[] = [
     detail: 'Replays, habits, wins',
     description: 'Turn your matches into a feedback loop. Review your deaths, spot repeating mistakes, and carry one clear adjustment into your next game.',
     modules: ['Death review', 'Mistake patterns', 'Habit tracking', 'Next-game plan'],
-    image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=85',
+    image: 'https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=1200&q=85',
   },
 ]
 

@@ -5,7 +5,7 @@ A full-stack gaming-course store where customers browse courses, buy them with *
 - **Frontend:** React + TypeScript + Vite
 - **Backend / database:** Supabase (PostgreSQL database, Authentication, Storage, Row Level Security)
 - **Routing:** React Router
-- **Deploy:** any static host that serves a Vite build (Vercel, Netlify, Cloudflare Pages)
+- **Hosting:** Vercel (configured and ready to deploy)
 
 > New to code? Read this file top to bottom once. Each section explains the *what* and the *why*, not just the commands.
 
@@ -92,7 +92,7 @@ To stop the dev server, click the terminal and press `Ctrl + C`.
 
 ```
 ikka/
-├── public/                 # files served as-is (favicon, _redirects for Netlify)
+├── public/                 # files served as-is (favicon)
 ├── src/
 │   ├── components/         # reusable pieces
 │   │   ├── Header.tsx         # top navigation bar
@@ -114,8 +114,8 @@ ikka/
 │   ├── auth-setup.sql         # profile auto-create, is_admin() helper
 │   ├── rls.sql                # security rules + storage buckets
 │   └── reset-test-data.sql    # wipes test orders (keeps users/products)
-├── vercel.json                # deploy config for Vercel
-├── netlify.toml               # deploy config for Netlify
+├── vercel.json                # deploy config for Vercel (SPA rewrites)
+├── DEPLOYMENT.md              # step-by-step guide to launch on Vercel
 ├── .env.example               # template for your secret-free settings
 └── README.md
 ```
@@ -257,11 +257,11 @@ git push            # upload to GitHub
 Full step-by-step, with screenshots-in-words, is in **[DEPLOYMENT.md](./DEPLOYMENT.md)**. The short version:
 
 1. Push your code to GitHub (Section 10).
-2. In **Vercel** (or Netlify), "Import" the GitHub repository.
-3. Add the two environment variables (`VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`) in the host's dashboard.
-4. Build command `npm run build`, output folder `dist` (already configured via `vercel.json` / `netlify.toml`).
-5. Deploy, then update Supabase **Authentication → URL Configuration** with your live URL.
-6. To update the site later: commit and push — the host rebuilds automatically.
+2. In **Vercel**, "Import" your GitHub repository.
+3. Add the two environment variables (`VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`) in the Vercel dashboard.
+4. Build command `npm run build`, output folder `dist` (already configured by `vercel.json`).
+5. Deploy, then update Supabase **Authentication → URL Configuration** with your live Vercel URL.
+6. To update the site later: commit and push — Vercel rebuilds automatically.
 
 ---
 
@@ -280,7 +280,7 @@ Full step-by-step, with screenshots-in-words, is in **[DEPLOYMENT.md](./DEPLOYME
 | Symptom | Likely cause | Fix |
 |---|---|---|
 | "Supabase is not configured" | `.env` missing/wrong | Recheck Section 7, restart the dev server |
-| Blank page after deploy, refresh 404s | SPA rewrites missing | Keep `vercel.json` / `netlify.toml` / `public/_redirects` |
+| Blank page after deploy, refresh 404s | SPA rewrites missing | Keep `vercel.json` in the project root |
 | Admin tools missing | Role not reloaded | Log out and back in; confirm the `update ... role='admin'` ran |
 | Payment proof upload fails | Storage policy not applied | Re-run `supabase/rls.sql` |
 | Cannot open a lesson file | Not purchased, or policy missing | Re-run `supabase/rls.sql`; check `course_access` |

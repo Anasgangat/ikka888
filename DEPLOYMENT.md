@@ -1,6 +1,6 @@
 # Deployment Guide (beginner friendly)
 
-This guide takes the GameBoost Academy project from your computer to a **live website** on the internet, using **GitHub + Vercel**. Netlify works almost identically (notes at the end).
+This guide takes the GameBoost Academy project from your computer to a **live website** on the internet, using **GitHub + Vercel**.
 
 The flow we will build:
 
@@ -75,7 +75,7 @@ Refresh the GitHub page — you should see all your files (and **no** `.env`).
    - **Framework Preset:** Vite
    - **Build Command:** `npm run build`
    - **Output Directory:** `dist`
-   - (These are also stated in `vercel.json`, so you usually don't need to touch them.)
+   The `vercel.json` file in your repo already adds SPA rewrites, so pages like `/account` will work when refreshed directly — no extra settings needed.
 5. Open **Environment Variables** and add **two** rows:
 
    | Name | Value |
@@ -137,7 +137,7 @@ After fixing, commit and push again — Vercel retries automatically.
 
 ---
 
-## 7. Custom domain (later)
+## 7. Custom domain on Vercel (later)
 
 A **domain** is your web address (e.g. `gameboostacademy.co.za`).
 
@@ -153,19 +153,7 @@ A **domain** is your web address (e.g. `gameboostacademy.co.za`).
 
 ---
 
-## 8. Deploying with Netlify instead
-
-1. <https://netlify.com> → sign in with GitHub → **Add new site → Import an existing project**.
-2. Pick your repo.
-3. Build command `npm run build`; publish directory `dist` (also set in `netlify.toml`).
-4. Add the same two environment variables.
-5. Deploy. Then repeat Section 4 with your Netlify address.
-
-`netlify.toml` and `public/_redirects` already handle SPA rewrites.
-
----
-
-## 9. Post-launch safety checklist
+## 8. Post-launch safety checklist
 
 - [ ] The `.env` file is **not** on GitHub.
 - [ ] Only the **public** Supabase key is in the host's env vars.
@@ -176,6 +164,6 @@ A **domain** is your web address (e.g. `gameboostacademy.co.za`).
 
 ---
 
-## 10. One-line summary
+## 9. One-line summary
 
 > Edit code in VS Code → `git commit` → `git push` → GitHub → Vercel rebuilds → live website updates. Supabase keeps running the database, logins, and file storage behind it all.

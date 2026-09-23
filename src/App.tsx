@@ -41,18 +41,32 @@ function App() {
   const modeMatch = path.match(/^\/mode\/([^/]+)\/?$/)
   const selectedCourseId = courseMatch ? courseMatch[1] : null
   const selectedModeId = modeMatch ? modeMatch[1] : null
-  const activePage: 'home' | 'payments' | 'learning' | 'mode' | 'account' =
+  const activePage:
+    | 'home' | 'courses' | 'about' | 'faq' | 'admin'
+    | 'payments' | 'learning' | 'mode' | 'account' =
     path.startsWith('/account')
       ? 'account'
       : path.startsWith('/my-courses')
         ? 'learning'
         : path.startsWith('/payment')
           ? 'payments'
-          : path.startsWith('/mode')
-            ? 'mode'
-            : 'home'
+          : path === '/admin'
+            ? 'admin'
+            : path.startsWith('/mode')
+              ? 'mode'
+              : path.startsWith('/courses')
+                ? 'courses'
+                : path.startsWith('/about')
+                  ? 'about'
+                  : path.startsWith('/faq')
+                    ? 'faq'
+                    : 'home'
 
   const goHome = () => navigate('/')
+  const goCourses = () => navigate('/courses')
+  const goAbout = () => navigate('/about')
+  const goFaq = () => navigate('/faq')
+  const goAdmin = () => navigate('/admin')
   const goAccount = () => navigate('/account')
   const goLearning = () => navigate('/my-courses')
   const goPayments = () => navigate('/payment')
@@ -771,6 +785,10 @@ function App() {
         isAdmin={isAdmin}
         cartCount={cartCount}
         onGoHome={goHome}
+        onGoCourses={goCourses}
+        onGoAbout={goAbout}
+        onGoFaq={goFaq}
+        onGoAdmin={goAdmin}
         onGoAccount={goAccount}
         onGoLearning={goLearning}
         onGoPayments={goPayments}
@@ -780,8 +798,10 @@ function App() {
       />
 
       <main>
-        {!selectedCourse && activePage === 'home' ? (
+        {!selectedCourse && ['home', 'courses', 'about', 'faq', 'admin'].includes(activePage) ? (
           <>
+            {activePage === 'home' && (
+              <>
             <section className="hero-section">
               <div className="hero-copy">
                 <span className="eyebrow">LEVEL UP FASTER</span>
@@ -795,7 +815,7 @@ function App() {
                   <button type="button" className="btn btn-primary large" onClick={() => document.querySelector('#courses')?.scrollIntoView({ behavior: 'smooth' })}>
                     Explore courses
                   </button>
-                  <button type="button" className="btn btn-ghost large" onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}>
+                  <button type="button" className="btn btn-ghost large" onClick={goAbout}>
                     See how it works
                   </button>
                 </div>
@@ -863,7 +883,7 @@ function App() {
               </div>
 
               <div className="course-grid">
-                {storeCourses.length ? storeCourses.map((course) => (
+                {storeCourses.length ? storeCourses.slice(0, 3).map((course) => (
                   <article className="course-card" key={course.id}>
                     <div
                       className="course-thumb"
@@ -913,6 +933,54 @@ function App() {
                 </div>
               </div>
             </section>
+              </>
+              )}
+
+              {activePage === 'courses' && (
+                <>
+            <section className="courses-section" id="all-courses">
+              <div className="section-heading">
+                <span className="eyebrow">ALL COURSES</span>
+                <h2>Every course in the catalogue.</h2>
+              </div>
+              <div className="course-grid">
+                {storeCourses.length ? storeCourses.map((course) => (
+                  <article className="course-card" key={course.id}>
+                    <div
+                      className="course-thumb"
+                      style={{ backgroundImage: `linear-gradient(180deg, rgba(5,9,17,0.2), rgba(5,9,17,0.75)), url(${course.image})` }}
+                    >
+                      <span>{course.tag}</span>
+                    </div>
+                    <div className="course-body">
+                      <p className="course-category">{course.category}</p>
+                      <h3>{course.title}</h3>
+                      <p className="course-short">{course.shortDescription}</p>
+                      <div className="course-meta">
+                        <span>{course.level}</span>
+                        <strong>{course.price}</strong>
+                      </div>
+                      <button
+                        type="button"
+                        className="btn btn-secondary course-button"
+                        onClick={() => openCourse(course.id)}
+                      >
+                        View course
+                      </button>
+                      <button type="button" className="btn btn-cart course-button" onClick={() => addToCart(course)}>
+                        Add to cart
+                      </button>
+                    </div>
+                  </article>
+                )) : (
+                  <div className="catalogue-empty">
+                    <span className="mini-label">CATALOGUE LOADING</span>
+                    <h3>No published courses yet.</h3>
+                    <p>New training drops will appear here as soon as they are published by the academy.</p>
+                  </div>
+                )}
+              </div>
+            </section>
 
             <section className="gallery-section" aria-label="Inside the training room">
               <div className="section-heading">
@@ -931,7 +999,11 @@ function App() {
                 ))}
               </div>
             </section>
+                </>
+              )}
 
+              {activePage === 'about' && (
+                <>
             <section className="benefits-section" id="benefits">
               <div className="section-heading narrow">
                 <span className="eyebrow">WHY PLAYERS JOIN</span>
@@ -947,7 +1019,11 @@ function App() {
                 ))}
               </div>
             </section>
+                </>
+              )}
 
+              {activePage === 'home' && (
+                <>
             <section className="modes-section" aria-label="Academy training modes">
               <div className="section-heading">
                 <span className="eyebrow">CHOOSE YOUR MODE</span>
@@ -966,7 +1042,11 @@ function App() {
                 ))}
               </div>
             </section>
+                </>
+              )}
 
+              {activePage === 'about' && (
+                <>
             <section className="about-section" id="about">
               <div className="about-copy">
                 <span className="eyebrow">ABOUT THE ACADEMY</span>
@@ -1008,7 +1088,11 @@ function App() {
                 ))}
               </div>
             </section>
+                </>
+              )}
 
+              {activePage === 'faq' && (
+                <>
             <section className="faq-section" id="faq">
               <div className="section-heading narrow">
                 <span className="eyebrow">FAQ</span>
@@ -1024,7 +1108,21 @@ function App() {
                 ))}
               </div>
             </section>
+                </>
+              )}
 
+              {activePage === 'admin' && (
+                <>
+            {!isAdmin && (
+              <section className="payment-page" aria-label="Access denied">
+                <div className="payment-page-heading">
+                  <span className="eyebrow">ADMIN ONLY</span>
+                  <h1>Not authorised.</h1>
+                  <p>You need an administrator account to view this page.</p>
+                </div>
+                <button type="button" className="btn btn-ghost page-back" onClick={goHome}>← Back to home</button>
+              </section>
+            )}
             {user && isAdmin && <section className="dashboard-section" aria-label="Admin account dashboard">
               <div className="section-heading narrow">
                 <span className="eyebrow">USER DASHBOARD</span>
@@ -1326,6 +1424,8 @@ function App() {
                 </div>
               </section>
             )}
+                </>
+              )}
           </>
         ) : !selectedCourse && activePage === 'mode' && selectedMode ? (
           <section className="mode-page" aria-label={`${selectedMode.title} training mode`}>
@@ -1611,7 +1711,7 @@ function App() {
         ) : null}
       </main>
 
-      <Footer onGoHome={goHome} onGoLearning={goLearning} onGoPayments={goPayments} />
+      <Footer onGoHome={goHome} onGoCourses={goCourses} onGoAbout={goAbout} onGoFaq={goFaq} onGoLearning={goLearning} onGoPayments={goPayments} />
 
       {cartOpen && (
         <CartDrawer

@@ -2487,6 +2487,225 @@ body::before {
   line-height: 1.5;
 }
 
+/* ── Multi-page nav + compact mobile layout ── */
+
+.main-nav button {
+  border: 0;
+  padding: 0;
+  color: #b9c5d7;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.96rem;
+  transition: color 0.2s ease;
+}
+
+.main-nav button:hover {
+  color: var(--arena-cyan);
+}
+
+.main-nav .nav-admin {
+  color: var(--arena-lime);
+}
+
+.main-nav .nav-admin:hover {
+  color: #ffffff;
+}
+
+/* Give every page a bit of breathing room at the top. */
+main {
+  min-height: 55vh;
+}
+
+@media (max-width: 900px) {
+  .main-nav button {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Tighter page shell */
+  .page-shell {
+    padding: 12px 14px 32px;
+  }
+
+  /* Nav: keep it on one tidy row that wraps nicely */
+  .main-nav {
+    display: flex;
+    grid-column: 1 / -1;
+    order: 3;
+    gap: 4px;
+    width: 100%;
+    padding-top: 8px;
+    border-top: 1px solid rgba(154, 178, 220, 0.14);
+    justify-content: space-between;
+  }
+
+  .main-nav button {
+    padding: 6px 4px;
+    text-align: center;
+    font-size: 0.78rem;
+  }
+
+  /* Shrink headings so phone screens are not dominated by text */
+  .hero-copy h1,
+  .detail-copy h1,
+  .payment-page-heading h1,
+  .mode-page-copy h1 {
+    font-size: clamp(2.1rem, 11vw, 3rem) !important;
+    line-height: 1 !important;
+    margin-top: 8px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .section-heading h2,
+  .cart-heading h2,
+  .learning-course-card h2 {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+
+  .payment-page-heading {
+    margin-bottom: 20px;
+  }
+
+  .payment-page-heading h1 {
+    font-size: clamp(2.1rem, 11vw, 3rem);
+  }
+
+  .payment-page-heading p {
+    font-size: 0.95rem;
+  }
+
+  /* Less empty space between stacked sections */
+  .courses-section,
+  .benefits-section,
+  .about-section,
+  .testimonial-section,
+  .faq-section,
+  .dashboard-section,
+  .gallery-section,
+  .modes-section,
+  .admin-section {
+    padding-top: 26px;
+  }
+
+  .hero-section {
+    min-height: auto;
+    padding: 34px 18px 30px;
+    gap: 8px;
+  }
+
+  .hero-stats {
+    margin-top: 20px;
+    gap: 16px;
+  }
+
+  .hero-stats strong {
+    font-size: 1.15rem;
+  }
+
+  .topic-marquee {
+    margin-top: 16px;
+    padding: 10px 0;
+  }
+
+  .topic-pill {
+    padding: 7px 14px;
+    font-size: 0.74rem;
+  }
+
+  .stats-band {
+    margin-top: 18px;
+    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stat-block {
+    padding: 16px 14px;
+  }
+
+  .stat-block strong {
+    font-size: clamp(1.5rem, 8vw, 2.1rem);
+  }
+
+  .gallery-grid {
+    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gallery-image {
+    height: 130px;
+  }
+
+  .gallery-card figcaption {
+    padding: 10px;
+  }
+
+  .gallery-card figcaption strong {
+    font-size: 0.85rem;
+  }
+
+  .course-grid {
+    gap: 14px;
+  }
+
+  .course-thumb {
+    min-height: 140px;
+  }
+
+  .modes-grid {
+    gap: 10px;
+  }
+
+  .mode-card {
+    min-height: 220px;
+  }
+
+  .benefits-grid {
+    gap: 12px;
+  }
+
+  .training-strip {
+    margin-top: 18px;
+    padding: 16px;
+  }
+
+  .section-heading {
+    margin-bottom: 16px;
+  }
+
+  .faq-item {
+    padding: 14px 16px;
+  }
+
+  .detail-hero {
+    gap: 18px;
+  }
+
+  .detail-visual {
+    min-height: 300px;
+  }
+
+  .course-details-grid {
+    gap: 14px;
+    margin-top: 18px;
+  }
+
+  .dashboard-summary {
+    gap: 10px;
+  }
+
+  .summary-card {
+    padding: 14px 12px;
+  }
+
+  .stat-block,
+  .gallery-card,
+  .testimonial-card,
+  .benefit-item {
+    box-shadow: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .topic-marquee-track {
     animation: none;

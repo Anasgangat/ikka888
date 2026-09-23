@@ -1,10 +1,13 @@
 type FooterProps = {
   onGoHome: () => void
+  onGoCourses: () => void
+  onGoAbout: () => void
+  onGoFaq: () => void
   onGoLearning: () => void
   onGoPayments: () => void
 }
 
-function Footer({ onGoHome, onGoLearning, onGoPayments }: FooterProps) {
+function Footer({ onGoHome, onGoCourses, onGoAbout, onGoFaq, onGoLearning, onGoPayments }: FooterProps) {
   return (
     <footer className="site-footer">
       <div className="footer-top">
@@ -18,10 +21,10 @@ function Footer({ onGoHome, onGoLearning, onGoPayments }: FooterProps) {
 
         <div className="footer-col">
           <span className="footer-col-title">Explore</span>
-          <button type="button" className="footer-link" onClick={onGoHome}>Courses</button>
-          <button type="button" className="footer-link" onClick={onGoHome}>Benefits</button>
-          <button type="button" className="footer-link" onClick={onGoHome}>About</button>
-          <button type="button" className="footer-link" onClick={onGoHome}>FAQ</button>
+          <button type="button" className="footer-link" onClick={onGoHome}>Home</button>
+          <button type="button" className="footer-link" onClick={onGoCourses}>Courses</button>
+          <button type="button" className="footer-link" onClick={onGoAbout}>About</button>
+          <button type="button" className="footer-link" onClick={onGoFaq}>FAQ</button>
         </div>
 
         <div className="footer-col">

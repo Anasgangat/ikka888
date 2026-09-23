@@ -5,6 +5,10 @@ type HeaderProps = {
   isAdmin: boolean
   cartCount: number
   onGoHome: () => void
+  onGoCourses: () => void
+  onGoAbout: () => void
+  onGoFaq: () => void
+  onGoAdmin: () => void
   onGoAccount: () => void
   onGoLearning: () => void
   onGoPayments: () => void
@@ -18,6 +22,10 @@ function Header({
   isAdmin,
   cartCount,
   onGoHome,
+  onGoCourses,
+  onGoAbout,
+  onGoFaq,
+  onGoAdmin,
   onGoAccount,
   onGoLearning,
   onGoPayments,
@@ -38,10 +46,10 @@ function Header({
       </button>
 
       <nav className="main-nav" aria-label="Main navigation">
-        <a href="#courses" onClick={onGoHome}>Courses</a>
-        <a href="#benefits">Benefits</a>
-        <a href="#about">About</a>
-        <a href="#faq">FAQ</a>
+        <button type="button" onClick={onGoCourses}>Courses</button>
+        <button type="button" onClick={onGoAbout}>About</button>
+        <button type="button" onClick={onGoFaq}>FAQ</button>
+        {isAdmin && <button type="button" className="nav-admin" onClick={onGoAdmin}>Dashboard</button>}
       </nav>
 
       <div className="nav-actions">
